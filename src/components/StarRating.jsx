@@ -15,7 +15,7 @@ export default function StarRating({ noOfStars = 5 }) {
     setHover(getCurrentIndex)
     }
 
-    // 3. Fare yıldızdan çıkınca, geçici durumu sıfırlayıp kalıcı oya geri dönsün
+ 
     function handleMouseLeave() {
         setHover(rating)
     }
@@ -23,12 +23,11 @@ export default function StarRating({ noOfStars = 5 }) {
     return (
         <div className="star-rating">
             {[...Array(noOfStars)].map((_, index) => {
-                index += 1; // Artık yıldızlarımız 1'den 5'e kadar numaralandı
+                index += 1; 
 
                 return (
                     <FaStar
                         key={index}
-                        // 4. ETKİLEŞİMLERİ BAĞLA:
                         onClick={() => handleClick(index)}
                         onMouseMove={() => handleMouseEnter(index) }
                         onMouseLeave={() => handleMouseLeave(index) }
