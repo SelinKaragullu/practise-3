@@ -3,21 +3,21 @@ import { FaStar } from 'react-icons/fa'
 
 export default function StarRating({ noOfStars = 5 }) {
     const [rating, setRating] = useState(0)
-    const [hover, setHover] = useState(0) // false değil, 0 yaptık
+    const [hover, setHover] = useState(0) 
 
-    // 1. Tıklanınca kalıcı oyu (rating) kaydetsin
+   
     function handleClick(getCurrentIndex) {
-        // BURAYI DOLDUR: setRating'i kullan
+     setRating(getCurrentIndex)
     }
 
-    // 2. Fare üstüne gelince geçici durumu (hover) kaydetsin
+   
     function handleMouseEnter(getCurrentIndex) {
-        // BURAYI DOLDUR: setHover'i kullan
+    setHover(getCurrentIndex)
     }
 
     // 3. Fare yıldızdan çıkınca, geçici durumu sıfırlayıp kalıcı oya geri dönsün
     function handleMouseLeave() {
-        // BURAYI DOLDUR: setHover'ın içine 'rating' değerini ver
+        setHover(rating)
     }
 
     return (
@@ -29,10 +29,11 @@ export default function StarRating({ noOfStars = 5 }) {
                     <FaStar
                         key={index}
                         // 4. ETKİLEŞİMLERİ BAĞLA:
-                        // onClick={() => ... }
-                        // onMouseMove={() => ... }
-                        // onMouseLeave={() => ... }
+                        onClick={() => handleClick(index)}
+                        onMouseMove={() => handleMouseEnter(index) }
+                        onMouseLeave={() => handleMouseLeave(index) }
                         size={40}
+                        className={index <= (hover || rating) ? "active" : "inactive"}
                     />
                 )
             })}
