@@ -17,8 +17,10 @@ export default function SearchAutocomplete() {
                 data.users.map((user)=>user.firstName)
             )}
             setLoading(false)
-        } catch {
+        } catch(err) {
             setLoading(false)
+            setError(err.message)
+            console.log(err)
         }
     }
 
