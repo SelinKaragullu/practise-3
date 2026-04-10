@@ -52,7 +52,7 @@ return (
    <input 
    type="text" 
    onChange={handleChange}
-   
+   placeholder="Type user..."
    />
 )
 }
