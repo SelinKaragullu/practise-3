@@ -12,9 +12,16 @@ export default function SearchAutocomplete() {
 
 
 
-    function handleChange(e) {
+    function handleChange(event) {
 const query = event.target.value.toLowerCase()
 setSearchParam(query)
+
+if(query.length>1) {const filteredUsersArray = users.filter((user)=>user.toLowerCase().includes(query))
+   setFilteredUsers(filteredUsersArray)
+setShowDropdown(true)
+}else{
+    setShowDropdown(false)
+}
     }
 
     async function fetchListOfUsers() {
@@ -41,6 +48,11 @@ useEffect (()=>{
 console.log(users)
 
 return (
-    loading? <div>Loading...</div> : <div>data is in console, check it out</div>
+    loading? <div>Loading...</div> : 
+   <input 
+   type="text" 
+   onChange={handleChange}
+   
+   />
 )
 }
