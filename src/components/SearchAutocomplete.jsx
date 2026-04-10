@@ -6,6 +6,13 @@ export default function SearchAutocomplete() {
     const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [searchParam,setSearchParam] = useState("")
+    const [filteredUsers,setFilteredUsers] = useState([])
+    const [showDropdown,setShowDropdown] = useState(false)
+
+
+
+    function 
 
     async function fetchListOfUsers() {
 
