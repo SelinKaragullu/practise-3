@@ -12,7 +12,10 @@ export default function SearchAutocomplete() {
 
 
 
-    function 
+    function handleChange(e) {
+const query = event.target.value.toLowerCase()
+setSearchParam(query)
+    }
 
     async function fetchListOfUsers() {
 
