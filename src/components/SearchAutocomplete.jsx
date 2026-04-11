@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react'
-import Suggestions from './Suggestions'
+
 
 export default function SearchAutocomplete() {
 
@@ -65,10 +65,20 @@ export default function SearchAutocomplete() {
                 onChange={handleChange}
                 placeholder="Type user..."
             />}
-
-            <Suggestions handleClick={handleSuggestionClick} data={filteredUsers}/>
+{showDropdown && <Suggestions handleClick={handleSuggestionClick} data={filteredUsers}/>}
+          
 </>
+    )}
 
 
-    )
+
+
+export function Suggestions({ data, handleClick }) {
+    return (
+        <ul>
+            {data && data.length ? (
+                data.map((item,index)=><li key={index} onClick={handleClick}>{item}</li>)
+            ) : null}
+        </ul>
+    );
 }
