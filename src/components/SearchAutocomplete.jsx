@@ -28,7 +28,8 @@ export default function SearchAutocomplete() {
 
     function handleSuggestionClick(event) {
         setShowDropdown(false)
-        setSearchParam
+        setSearchParam(event.target.innerText)
+        setFilteredUsers([])
     }
 
     async function fetchListOfUsers() {
@@ -57,13 +58,13 @@ export default function SearchAutocomplete() {
     console.log(users)
 
     return (<>
-        loading ? <div>Loading...</div> :
+        {loading ? <div>Loading...</div> :
             <input
                 type="text"
                 value={searchParam}
                 onChange={handleChange}
                 placeholder="Type user..."
-            />
+            />}
 
             <Suggestions handleClick={handleSuggestionClick} data={filteredUsers}/>
 </>
