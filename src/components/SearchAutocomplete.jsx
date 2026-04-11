@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react'
+import Suggestions from './Suggestions'
 
 export default function SearchAutocomplete() {
 
@@ -22,7 +23,12 @@ export default function SearchAutocomplete() {
             setShowDropdown(true)
         } else {
             setShowDropdown(false)
-        }
+                   }
+    }
+
+    function handleSuggestionClick(event) {
+        setShowDropdown(false)
+        setSearchParam
     }
 
     async function fetchListOfUsers() {
@@ -50,7 +56,7 @@ export default function SearchAutocomplete() {
 
     console.log(users)
 
-    return (
+    return (<>
         loading ? <div>Loading...</div> :
             <input
                 type="text"
@@ -58,5 +64,10 @@ export default function SearchAutocomplete() {
                 onChange={handleChange}
                 placeholder="Type user..."
             />
+
+            <Suggestions handleClick={handleSuggestionClick} data={filteredUsers}/>
+</>
+
+
     )
 }
