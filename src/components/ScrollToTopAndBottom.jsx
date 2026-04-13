@@ -1,3 +1,7 @@
+import {useState,useEffect,useRef} from 'react'
+
+const bottomRef = useRef(null)
+
 
 
 export default function ScrollToTopAndBottom () {
@@ -18,6 +22,7 @@ async function fetchData () {
         setError(err)
     }
   }
+
 
 
 useEffect(()=>{
