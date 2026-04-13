@@ -1,3 +1,5 @@
+import Square from "./Square"
+import {useState} from "react"
 
 
 export default function TicTacToe () {
@@ -6,7 +8,8 @@ export default function TicTacToe () {
   
 
     return <div>
-
-        
+<div><Square onClick={()=>{}} value={board[0]} /><Square onClick={()=>{}} value={board[1]}/><Square onClick={()=>{}} value={board[2]} /></div>
+<div><Square onClick={()=>{}} value={board[3]}/><Square onClick={()=>{}} value={board[4]} /><Square onClick={()=>{}} value={board[5]} /></div>
+<div><Square onClick={()=>{}} value={board[6]} /><Square onClick={()=>{}} value={board[7]} /><Square onClick={()=>{}} value={board[8]} /></div>
     </div>
 }
