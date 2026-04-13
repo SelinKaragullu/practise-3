@@ -37,6 +37,10 @@ function handleScrollToTop () {
   behavior: "smooth" 
 })}
 
+function handleScrollToBottom () {
+  bottomRef.current.scrollIntoView({behavior: "smooth"})
+}
+
 
 return <>
 <h1>Scroll feature</h1>
@@ -45,5 +49,6 @@ return <>
 )}
 <button onClick={handleScrollToTop}>Go Top!</button>
 
+<div ref={bottomRef}></div>
 </>
 }
