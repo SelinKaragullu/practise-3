@@ -11,11 +11,11 @@ async function fetchData () {
     setLoading(true)
    const res = await fetch("https://dummyjson.com/products?limit=100")
    const data = await res.json() 
-    setData(data)
+    setData(data.products)
     setLoading(false)
     } catch (err) {
         setLoading(false)
-        setErrorMessage(err)
+        setError(err)
     }
   }
 
@@ -23,5 +23,22 @@ async function fetchData () {
 useEffect(()=>{
     fetchData()
 },[])
-}
 
+
+function handleScrollToTop () {
+  return window.scrollTo({
+  top: 0, 
+  left: 0, 
+  behavior: "smooth" 
+})}
+
+
+return <>
+<h1>Scroll feature</h1>
+{data.map((item)=><li key={item.id}>{item.title}</li>
+
+)}
+<button onClick={handleScrollToTop}>Go Top!</button>
+
+</>
+}
