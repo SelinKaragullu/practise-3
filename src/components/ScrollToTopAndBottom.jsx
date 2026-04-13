@@ -1,6 +1,6 @@
 import {useState,useEffect,useRef} from 'react'
 
-const bottomRef = useRef(null)
+
 
 
 
@@ -9,6 +9,7 @@ export default function ScrollToTopAndBottom () {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const bottomRef = useRef(null)
 
 async function fetchData () {
     try{
@@ -48,6 +49,7 @@ return <>
 
 )}
 <button onClick={handleScrollToTop}>Go Top!</button>
+<button onClick={handleScrollToBottom}></button>
 
 <div ref={bottomRef}></div>
 </>
