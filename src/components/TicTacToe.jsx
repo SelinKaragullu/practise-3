@@ -10,6 +10,7 @@ export default function TicTacToe () {
     function handleClick (index) {
 const cpySquares = [...squares]
 if(cpySquares(index) !== "") return 
+if(cpySquares(index) == "" || getWinner(squares)) return
 cpySquares[index] = turn
 setSquares(cpySquares)
 setTurn(turn==="X" ? "O" : "X")
@@ -31,6 +32,13 @@ if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) return 
         }
     return null
 }
+
+const winner = getWinner(squares)
+let status = ""
+if(winner){status = "Winner" + winner}
+else if(!squares.includes("")) {status = "Even"}
+else {status = "Next player is " + turn}
+
 
     return <div>
 <div><Square onClick={()=>{handleClick(0)}} value={board[0]} /><Square onClick={()=>{handleClick(1)}} value={board[1]}/><Square onClick={()=>{handleClick(2)}} value={board[2]} /></div>
