@@ -33,6 +33,13 @@ if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) return 
     return null
 }
 
+
+function handleReset () {
+    status = ""
+    setTurn = "X"
+    setSquares(Array(9).fill(""))
+}
+
 const winner = getWinner(squares)
 let status = ""
 if(winner){status = "Winner" + winner}
@@ -41,8 +48,11 @@ else {status = "Next player is " + turn}
 
 
     return <div>
+<h1>{status}</h1>
 <div><Square onClick={()=>{handleClick(0)}} value={board[0]} /><Square onClick={()=>{handleClick(1)}} value={board[1]}/><Square onClick={()=>{handleClick(2)}} value={board[2]} /></div>
 <div><Square onClick={()=>{handleClick(3)}} value={board[3]}/><Square onClick={()=>{handleClick(4)}} value={board[4]} /><Square onClick={()=>{handleClick(5)}} value={board[5]} /></div>
 <div><Square onClick={()=>{handleClick(6)}} value={board[6]} /><Square onClick={()=>{handleClick(7)}} value={board[7]} /><Square onClick={()=>{handleClick(8)}} value={board[8]} /></div>
+
+<button onClick={handleReset}>{Replay}</button>
     </div>
 }
