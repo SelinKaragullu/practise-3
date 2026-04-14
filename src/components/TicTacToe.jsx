@@ -3,15 +3,15 @@ import {useState} from "react"
 
 
 export default function TicTacToe () {
-    const [board,setBoard] = useState(Array(9).fill(""))
+    const [squares,setSquares] = useState(Array(9).fill(""))
     const [turn,setTurn] = useState("X")
   
 
     function handleClick (index) {
-const cpyBoard = [...board]
-if(cpyBoard[index] !== "") return 
-cpyBoard[index] = turn
-setBoard(cpyBoard)
+const cpySquares = [...squares]
+if(cpySquares(index) !== "") return 
+cpySquares[index] = turn
+setSquares(cpySquares)
 setTurn(turn==="X" ? "O" : "X")
     }
 
@@ -28,7 +28,6 @@ setTurn(turn==="X" ? "O" : "X")
         {
 const [a,b,c] = winningPatterns[i]
 if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) return squares[a]
-
         }
     return null
 }
