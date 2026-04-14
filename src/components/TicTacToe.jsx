@@ -18,15 +18,19 @@ setTurn(turn==="X" ? "O" : "X")
 
     function getWinner(squares) {
     const winningPatterns = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Yatay
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Dikey
-        [0, 4, 8], [2, 4, 6]             // Çapraz
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Lateral
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical
+        [0, 4, 8], [2, 4, 6]             // Diagonal
     ]
 
-    // BURAYI SEN DOLDUR: 
-    // Bir for döngüsü ile bu winningPatterns dizisini dön.
-    // Eğer squares[a], squares[b] ve squares[c] birbirine eşitse ve boş değilse, kazananı (squares[a]) döndür (return et).
-    // Döngü biterse ve kimse kazanmamışsa 'null' döndür.
+    for(let i =0; i<winningPatterns.length; i++)
+
+        {
+const [a,b,c] = winningPatterns[i]
+if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) return squares[a]
+
+        }
+    return null
 }
 
     return <div>
