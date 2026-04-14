@@ -9,9 +9,9 @@ export default function TicTacToe () {
 
     function handleClick (index) {
 const cpySquares = [...squares]
-if(cpySquares(index) !== "") return 
-if(cpySquares(index) == "" || getWinner(squares)) return
-cpySquares[index] = turn
+if(cpySquares[index] !== "") return 
+if(cpySquares[index] !== "" || getWinner(squares)) return
+ cpySquares[index] = turn
 setSquares(cpySquares)
 setTurn(turn==="X" ? "O" : "X")
     }
@@ -35,8 +35,7 @@ if(squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) return 
 
 
 function handleReset () {
-    status = ""
-    setTurn = "X"
+     setTurn = ("X")
     setSquares(Array(9).fill(""))
 }
 
@@ -49,10 +48,10 @@ else {status = "Next player is " + turn}
 
     return <div>
 <h1>{status}</h1>
-<div><Square onClick={()=>{handleClick(0)}} value={board[0]} /><Square onClick={()=>{handleClick(1)}} value={board[1]}/><Square onClick={()=>{handleClick(2)}} value={board[2]} /></div>
-<div><Square onClick={()=>{handleClick(3)}} value={board[3]}/><Square onClick={()=>{handleClick(4)}} value={board[4]} /><Square onClick={()=>{handleClick(5)}} value={board[5]} /></div>
-<div><Square onClick={()=>{handleClick(6)}} value={board[6]} /><Square onClick={()=>{handleClick(7)}} value={board[7]} /><Square onClick={()=>{handleClick(8)}} value={board[8]} /></div>
+<div><Square onClick={()=>{handleClick(0)}} value={squares[0]} /><Square onClick={()=>{handleClick(1)}} value={squares[1]}/><Square onClick={()=>{handleClick(2)}} value={squares[2]} /></div>
+<div><Square onClick={()=>{handleClick(3)}} value={squares[3]}/><Square onClick={()=>{handleClick(4)}} value={squares[4]} /><Square onClick={()=>{handleClick(5)}} value={squares[5]} /></div>
+<div><Square onClick={()=>{handleClick(6)}} value={squares[6]} /><Square onClick={()=>{handleClick(7)}} value={squares[7]} /><Square onClick={()=>{handleClick(8)}} value={squares[8]} /></div>
 
-<button onClick={handleReset}>{Replay}</button>
+<button onClick={handleReset}>Replay</button>
     </div>
 }
