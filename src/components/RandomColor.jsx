@@ -1,10 +1,15 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 
 export default function RandomColor () {
 const[typeOfColor,setTypeOfColor] = useState("hex")
 const[color,setColor] = useState("#000000")
 let style = {width:"100vw", height:"100vh", backgroundColor:color}
+
+
+useEffect (()=>{
+typeOfColor === 'hex' ? handleCreateRandomHexColor() : handleCreateRandomRgbColor()
+},[typeOfColor])
 
 function randomColorUtility(length) {
     return Math.floor(Math.random() * length);
@@ -30,8 +35,8 @@ function handleCreateRandomRgbColor () {
 
     return <div style={style}>
     
-    <button onClick={()=>{}}>select HEX color</button>
-    <button onClick={()=>{}}>select RGB color</button>
+    <button onClick={()=>{setTypeOfColor('hex')}}>select HEX color</button>
+    <button onClick={()=>{setTypeOfColor('rgb')}}>select RGB color</button>
     <button onClick={typeOfColor === 'hex' ? handleCreateRandomHexColor : handleCreateRandomRgbColor}>select Random color</button>
     <h1>{color}</h1>
        
