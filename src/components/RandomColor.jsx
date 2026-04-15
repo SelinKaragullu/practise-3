@@ -12,7 +12,7 @@ typeOfColor === 'hex' ? handleCreateRandomHexColor() : handleCreateRandomRgbColo
 },[typeOfColor])
 
 function randomColorUtility(length) {
-    return Math.floor(Math.random() * length);
+    return Math.floor(Math.random() * length)
 }
 
 function handleCreateRandomHexColor() {
