@@ -21,11 +21,18 @@ function handleCreateRandomHexColor() {
 setColor(hexColor)
 }
 
+function handleCreateRandomRgbColor () {
+   const r = randomColorUtility(256)
+   const g = randomColorUtility(256)
+   const b = randomColorUtility(256)
+    setColor(`rgb(${r},${g},${b})`)
+}
+
     return <div style={style}>
     
     <button onClick={()=>{}}>select HEX color</button>
     <button onClick={()=>{}}>select RGB color</button>
-    <button onClick={()=>{}}>select Random color</button>
+    <button onClick={typeOfColor === 'hex' ? handleCreateRandomHexColor : handleCreateRandomRgbColor}>select Random color</button>
     <h1>{color}</h1>
        
     </div>
