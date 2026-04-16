@@ -18,7 +18,6 @@ export default function QRcodeGenerator() {
         setQuery("")
     }
 
-
     function reset() {
         setQrCode("")
         setQuery("")
@@ -33,7 +32,5 @@ export default function QRcodeGenerator() {
         {qrCode && <QRCode value={qrCode} />}
 
         <button onClick={reset}>Reset</button>
-
-
     </>
 }
