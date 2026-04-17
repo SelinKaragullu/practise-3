@@ -12,7 +12,7 @@ function handleToggleTheme () {
 
 return <div>
     <p>{theme}</p>
-    <button onClick={handleToggleTheme}></button>
+    <button onClick={handleToggleTheme}>change theme</button>
 
 </div>
 }
