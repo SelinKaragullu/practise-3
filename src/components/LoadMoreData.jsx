@@ -25,7 +25,8 @@ return <>
 <img src={item.thumbnail} alt="" />
 </div>
 )}
-<button onClick={()=>setCount(prevCount=>prevCount+1)}>Load more</button>
+<button disabled={loading || products.length===100} onClick={()=>setCount(prevCount=>prevCount+1)}>Load more</button>
+{products.length===100 && <p>You have reached 100 products</p>}
 </>
 
 }
