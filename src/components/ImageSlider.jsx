@@ -35,11 +35,6 @@ useEffect(()=>{
 
     </div>
 ))}
-
-
     <button onClick={handleNext}> Next </button>
-
-
-
     </>
 }
