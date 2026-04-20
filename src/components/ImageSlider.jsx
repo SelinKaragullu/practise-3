@@ -36,5 +36,16 @@ useEffect(()=>{
     </div>
 ))}
     <button onClick={handleNext}> Next </button>
+    <div className="circle-indicators">
+{images.map((_,index)=> <button key={index} 
+className={currentSlide===index? "current-indicator" : "inactive-indicator"}
+onClick={()=>setCurrentSlide(index)}
+>   
+</button>
+
+)
+}
+
+    </div>
     </>
 }
