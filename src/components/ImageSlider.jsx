@@ -40,12 +40,8 @@ useEffect(()=>{
 {images.map((_,index)=> <button key={index} 
 className={currentSlide===index? "current-indicator" : "inactive-indicator"}
 onClick={()=>setCurrentSlide(index)}
->   
-</button>
-
-)
-}
-
-    </div>
+></button>
+)}
+   </div>
     </>
 }
