@@ -24,5 +24,9 @@ fetchGithubUserData()
     return <>
     <input type="text" value={userName} onChange={(event)=>setUserName(event.target.value)}/>
     <button onClick={handleSubmit}>Search</button>
+
+{loading? <h1>Data Loading...</h1> : null}
+{userData !== null ? <User user={userData}/> : null
+}
     </>
 }
