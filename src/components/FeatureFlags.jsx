@@ -14,7 +14,9 @@ const componentsToRender = [
 
 return <>{loading? <div>Loading...</div> : null}
     {componentsToRender.map((component)=> <div key={component.key}>{
-    enabledFlags[component.key]? component.component : null}
+    enabledFlags[component.key]? 
+        component.component : 
+        null}
 </div>
     )}
 </>
