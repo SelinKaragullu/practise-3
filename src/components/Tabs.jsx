@@ -1,10 +1,15 @@
 
 
-export default function Tabs ({tabsContent}) {
+export default function Tabs({ tabsContent }) {
 
-    return <div>{
-        tabsContent.map((tab)=>(
-<div key={tab.label}>{tab.label}</div>
-        ))
+        const [currentTabIndex, setCurrentTabIndex] = useState(0)
+
+        return <div>{
+                tabsContent.map((tab, index) => (
+                        <div key={tab.index}
+                                onClick={setCurrentTabIndex(index)}
+
+                        >{tab.label}</div>
+                ))
         }</div>
 }
