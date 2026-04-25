@@ -11,8 +11,8 @@ export default function Tabs({ tabsContent }) {
                              className={currentTabIndex===index? "active" : ""}
 
                         >{tab.label}
-                        <div>{currentTabIndex===index? tab.content : ""}</div>
                         </div>
-                ))
-        }</div>
+                ))}
+                <div>{tabsContent[currentTabIndex].content}</div>
+        </div>
 }
