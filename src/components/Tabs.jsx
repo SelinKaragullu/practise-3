@@ -6,10 +6,13 @@ export default function Tabs({ tabsContent }) {
 
         return <div>{
                 tabsContent.map((tab, index) => (
-                        <div key={tab.index}
-                                onClick={setCurrentTabIndex(index)}
+                        <div key={index}
+                             onClick={()=>setCurrentTabIndex(index)}
+                             className={currentTabIndex===index? "active" : ""}
 
-                        >{tab.label}</div>
+                        >{tab.label}
+                        <div>{currentTabIndex===index? tab.content : ""}</div>
+                        </div>
                 ))
         }</div>
 }
