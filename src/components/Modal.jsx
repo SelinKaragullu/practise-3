@@ -9,9 +9,13 @@ export default function Modal({ id, header, body, footer, onClose }) {
                 <span onClick={onClose} className="close-modal-icon">&times;</span>
                 {header ? header : <h2>Header</h2>}
             </div>
-            {body ? body : <h2>this is our Modal body</h2>}
+            
+            <div className="body">
+                 {body ? body : <h2>this is our Modal body</h2>}
+            </div>
+           
             <div className="footer">
-                <h2>Footer</h2>
+               {footer ? footer : <h2>Footer</h2>}
             </div>
         </div>
     </div>
