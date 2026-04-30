@@ -51,3 +51,18 @@ function toggleTodo(id, completed) {
     })
   })
 }
+
+onChange={e=>toggleTodo(todo.id,e.target.checked)}
+
+function toggleTodo (id, completed) {
+  setTodos(currentTodos=>
+    currentTodos.map(todo=> {
+      if(todo.id===id){return {...todo,completed}}
+      return todo
+    }
+
+    )
+  )
+}
+
+
