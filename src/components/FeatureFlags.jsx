@@ -66,3 +66,7 @@ function toggleTodo (id, completed) {
 }
 
 
+function deleteTodo (id) {
+  setTodos(currentTodos=>currentTodos.filter((todo)=>todo.id!==id))
+}
+
