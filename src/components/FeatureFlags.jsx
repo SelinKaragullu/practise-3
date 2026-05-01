@@ -60,10 +60,8 @@ function toggleTodo (id, completed) {
       if(todo.id===id){return {...todo,completed}}
       return todo
     }
-
     )
-  )
-}
+  )}
 
 
 function deleteTodo (id) {
