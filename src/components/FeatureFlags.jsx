@@ -59,9 +59,10 @@ function toggleTodo (id, completed) {
     currentTodos.map(todo=> {
       if(todo.id===id){return {...todo,completed}}
       return todo
-    }
-    )
+    })
   )}
+
+
 
 
 function deleteTodo (id) {
